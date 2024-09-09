@@ -1,4 +1,4 @@
-## Frios Food Ltda
+## Frios Food Ltda 2
 
 Código que implementa um plano de negócio para uma empresa fictícia chamada Frios Food Ltda, em um novo contexto
 
