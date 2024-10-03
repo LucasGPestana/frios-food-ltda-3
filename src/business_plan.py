@@ -64,6 +64,10 @@ class BusinessPlan:
     Receita por quantidade
     """
 
+    if quantity <= self.initial_point[0]:
+
+      return 5.5 * quantity
+    
     return 5 * quantity
   
   def calculateProfit(self, quantity: int) -> float:
@@ -75,6 +79,14 @@ class BusinessPlan:
     return self.calculateTotalRevenue(quantity) - self.calculateTotalCost(quantity)
   
   def calculateMeanTotalCost(self, quantity: int) -> float:
+
+    """
+    Custo total médio por quantidade
+    """
+
+    if quantity == 0:
+
+      return self.calculateTotalCost(quantity)
 
     return self.calculateTotalCost(quantity) / quantity
   
@@ -174,6 +186,14 @@ class BusinessPlan:
         ax.scatter(x=self.demand_quantity, y=self.maximum_total_revenue, color='g', zorder=5, label=f"Receita Total Máxima")
 
         ax.annotate(text=f"{self.maximum_total_revenue:.2f}", xy=(self.demand_quantity, self.maximum_total_revenue), xytext=(-15, -20), textcoords="offset points")
+      
+      case "mean_cost":
+
+        y = list(map(self.calculateMeanTotalCost, x))
+
+        y_label = "Custo Total Médio (R$)"
+        label = "Custo Total Médio por Unidade Vendida"
+        title = "Custo Total Médio Associado a Cada Unidade Vendida"
       
       case _:
 
