@@ -74,6 +74,10 @@ class BusinessPlan:
 
     return self.calculateTotalRevenue(quantity) - self.calculateTotalCost(quantity)
   
+  def calculateMeanTotalCost(self, quantity: int) -> float:
+
+    return self.calculateTotalCost(quantity) / quantity
+  
   @property
   def break_even_point(self) -> int:
 
