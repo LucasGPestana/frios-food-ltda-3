@@ -15,3 +15,4 @@ if __name__ == "__main__":
   b_plan.generateGraphic("Profit")
   b_plan.generateGraphic("Cost")
   b_plan.generateGraphic("Revenue")
+  b_plan.generateGraphic("mean_cost")
